@@ -1,0 +1,13 @@
+[Unit]
+Description=Flask Demo Website
+After=network.target
+
+[Service]
+User=debian
+WorkingDirectory=/srv/www/demo
+Environment="PATH=/srv/www/demo/venv/bin"
+ExecStart=/srv/www/demo/venv/bin/python app.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
